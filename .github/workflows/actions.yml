@@ -6,7 +6,7 @@ jobs:
     run-github-actions:
       runs-on: ubuntu-latest
       steps:
-        - name: List Filess
+        - name: Lisst Filess
           run: |
             pwd
             ls -a
