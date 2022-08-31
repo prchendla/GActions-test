@@ -1,12 +1,12 @@
 name: Actions Workflow
 
-on: [push, pull_request]
+on: push
 
 jobs: 
     run-github-actions:
       runs-on: ubuntu-latest
       steps:
-        - name: Lisst Filess
+        - name: List Filess
           run: |
             pwd
             ls -a
@@ -26,6 +26,6 @@ jobs:
           uses: actions/hello-world-javascript-action@v1
           with: 
             who-to-greet: John
-        - name: LLog Greeting time
+        - name: Log Greeting time
           run: echo "${{ steps.greet.outputs.time }}"
           
