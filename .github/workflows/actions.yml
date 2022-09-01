@@ -2,7 +2,7 @@ name: Actions Workflow
 
 on:
   repository_dispatch: 
-    types: [build] 
+    types: [build]
   #schedule:
     #- cron: "0/5 * * * *"
     #- cron: "0/6 * * * *"
@@ -14,7 +14,7 @@ jobs:
     run-github-actions:
       runs-on: ubuntu-latest
       steps:
-        - name: List Filess
+        - name: LList Filess
           run: |
             pwd
             ls -a
