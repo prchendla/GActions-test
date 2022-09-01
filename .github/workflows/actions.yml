@@ -1,12 +1,22 @@
 name: Actions Workflow
 
-on: [push, pull_request]
+on:
+  repository_dispatch: 
+    types: [build]
+  #schedule:
+    #- cron: "0/5 * * * *"
+    #- cron: "0/6 * * * *"
+    #push: 
+    pull_request:
+      types: [closed, assigned, opened, reopened]
 
 jobs: 
     run-github-actions:
       runs-on: ubuntu-latest
       steps:
-        - name: List Filess
+       - name: payload
+         run: echo ${{ github.event.client_payload.env }}
+        - name: LList Filess
           run: |
             pwd
             ls -a
